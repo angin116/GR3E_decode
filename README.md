@@ -1,6 +1,6 @@
 # GR3E_decode
 GR3E三通道接收机解调，PPM转换成串口数字信号。  
-本工程在windows下如果出现乱码等问题，请尝试更换编辑器，如notepad++。
+本工程在windows下如果出现乱码等问题，请尝试更换编辑器，如notepad++。  
 在tools目录下有一个python小程序可以直观地显示出各个通道的数据。
 
 # 功能
