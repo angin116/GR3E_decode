@@ -106,8 +106,6 @@ void main()
     TF0 = 0;		//清除TF0标志
     TR0 = 1;		//定时器0开始计时
 
-
-
     while(1)
     {
 	if(flag_ready)

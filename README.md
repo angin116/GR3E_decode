@@ -64,4 +64,9 @@ TXD：P3.1
 
 更多关于单片机编程结构的文章请访问 <http://nicekwell.net/pages/dan-pian-ji-bian-cheng.html>
 
+完成之后：
+
+[GR3E_decoder](https://github.com/nicekwell/GR3E_decode/GR3E_decoder.jpg)
+
+效果演示视频：<http://v.youku.com/v_show/id_XMTg3ODIxODc2MA==.html?spm=a2hzp.8253869.0.0&from=y1.7-2>
 
