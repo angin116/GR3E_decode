@@ -1,0 +1,10 @@
+*
+!.gitignore
+!obj
+!list
+!12C5A60S2.h
+!main.c
+!GR3E_decode.plg
+!GR3E_decode.uvproj
+!README.md
+
