@@ -4,8 +4,11 @@
 
 #include "12C5A60S2.h"
 
+//#define DEBUG
+#ifdef DEBUG
 sbit test0 = P2^0;
 sbit test1 = P2^1;
+#endif
 sbit ch1 = P1^2;
 sbit ch2 = P1^1;
 sbit ch3 = P1^0;
@@ -32,7 +35,9 @@ void sendB(unsigned char dat)
 void t0() interrupt 1	//20us一次中断
 {
     static unsigned char over_num = 0;	//保存连续检测到所有通道都是低电平的次数
+#ifdef DEBUG
     test0 = 1;
+#endif
     switch(step)
     {
     case 0:	//采集信号，进入这一步说明已经出现至少有一路为高电平
@@ -79,7 +84,9 @@ void t0() interrupt 1	//20us一次中断
 	}
 	break;
     }
+#ifdef DEBUG
     test0 = 0;
+#endif
 }
 
 void main()
@@ -114,7 +121,9 @@ void main()
     {
 	if(flag_ready)
 	{
+#ifdef DEBUG
 	    test1 = ~test1;
+#endif
 	    if(first_frame)
 	    {
 		first_frame = false;
