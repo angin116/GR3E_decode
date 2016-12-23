@@ -9,11 +9,10 @@ while True:
     time.sleep(0.1)
     gr3e.flushInput()
     getdata = list(gr3e.read(8))
-#    print(getdata)
-#    print(getdata.index(1))
-    datafinal = getdata[getdata.index(1):getdata.index(1)+4]
-    print(datafinal)
-    
-    
+    if 1 in getdata:
+        datafinal = getdata[getdata.index(1):getdata.index(1)+4]
+        print(datafinal)
+    else:
+        print('miss signal')
     
       

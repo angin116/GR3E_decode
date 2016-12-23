@@ -18,6 +18,7 @@ typedef enum {
 unsigned char ch1_num=0, ch2_num=0, ch3_num=0;	//保存各个通道检测到高电平次数
 unsigned char ch1_mk, ch2_mk, ch3_mk;	// 三个通道的脉宽信息，此为要发送的数据
 bool flag_ready = false;	//数据准备好标志
+bool flag_miss = false;		//信号丢失标志
 unsigned char step = 0;	// 0-当前正在采集各个通道信号。
 			//1-所有通道信号已经采集完成，正在等待新的周期到来。
 
@@ -56,7 +57,10 @@ void t0() interrupt 1	//20us一次中断
 	    over_num ++;
 	    if(over_num == 5)	//连续50次所有通道都是低电平，确认本周期信号结束
 	    {
-		flag_ready = true;	//通知主进程发送数据，此变量由主进程清零
+		if(ch1_num < 25 || ch2_num < 25 || ch3_num < 25)	//有一路通道脉宽小于500us，认为信号有问题，发送信号丢失信息
+		    flag_miss = true;
+		else
+		    flag_ready = true;	//通知主进程发送数据，此变量由主进程清零
 		step = 1;	//进入等待阶段
 	    }
 	}
@@ -128,6 +132,11 @@ void main()
 		sendB(ch3_mk);
 		flag_ready = false;
 	    }
+	}
+	if(flag_miss)
+	{
+	    sendB(0x02);
+	    flag_miss = false;
 	}
     }
 }
