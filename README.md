@@ -8,8 +8,8 @@ GR3E是富斯（flysky）三通道航模遥控器的接收机，其三个通道�
 本工程使用单片机提取其三个通道的信号，解码后以数字信号通过UART串口输出。
 
 # GR3E特性
-关于GT2B遥控器和GR3E接收机的详细介绍可访问 <http://nicekwell.net/>。  
-关于PPM信号的详细介绍可访问 <http://nicekwell.net/>。
+关于GT2B遥控器和GR3E接收机的详细介绍可访问 <http://nicekwell.net/blog/20161223/gt2bhe-gr3ede-gong-neng-he-shi-yong.html>。  
+关于PPM信号的详细介绍可访问 <http://nicekwell.net/blog/20161223/ppmxin-hao-jie-shao.html>。
 
 三通道：
 
